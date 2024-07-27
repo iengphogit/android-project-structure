@@ -1,22 +1,15 @@
 package com.reansen.coreprojectstructure.base
 
 import androidx.lifecycle.ViewModel
-import com.reansen.domain.usecase.UseCaseParamIn
-import com.reansen.domain.usecase.helloworld.HelloWorldUseCase
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.Disposable
 
-class BaseViewModel : ViewModel() {
+open class BaseViewModel : ViewModel() {
 
-    private val fetchDataUseCase = HelloWorldUseCase()
     private val disposables = CompositeDisposable()
-    fun doSomething() {
-        val disposable = fetchDataUseCase.execute(
-            UseCaseParamIn(),
-            { result -> println("Received data: $result") },
-            { error -> println("Error: ${error.message}") },
-            { println("Completed") }
-        )
-        disposables.add(disposable)
+
+    protected fun executeObservable(execute: Disposable) {
+        disposables.add(execute)
     }
 
     override fun onCleared() {

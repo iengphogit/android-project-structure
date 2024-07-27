@@ -13,7 +13,15 @@ class HelloWorldUseCase : BaseUseCase<UseCaseParamIn, UseCaseResult>() {
         result.message = "Hello World"
         result.responseData = "hi"
         result.requestData = params
-        return Observable.just(result)
+        return Observable.create {
+            it.onNext(result)
+            result.responseData = "Hello world2"
+            it.onNext(result)
+            result.responseData = "Hello world3"
+            it.onNext(result)
+
+            it.onComplete()
+        }
     }
 
 

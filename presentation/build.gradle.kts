@@ -8,6 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
+
         applicationId = "com.reansen.coreprojectstructure"
         minSdk = 28
         targetSdk = 34
@@ -33,10 +34,21 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    packaging {
+        resources {
+            excludes += listOf(
+                "META-INF/INDEX.LIST",
+                "META-INF/INDEX.LIST2",
+                "META-INF/INDEX.LIST3",
+                "META-INF/io.netty.versions.properties"
+            )
+        }
+    }
 }
 
 dependencies {
-
+    implementation(kotlin("stdlib"))
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
@@ -49,6 +61,9 @@ dependencies {
     implementation(libs.rxjava3)
     implementation(libs.activity)
 
+    implementation("io.netty:netty-transport:4.1.75.Final") // Replace with the latest stable version
+    implementation("io.netty:netty-codec:4.1.75.Final")
+    implementation("io.netty:netty-handler:4.1.75.Final")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

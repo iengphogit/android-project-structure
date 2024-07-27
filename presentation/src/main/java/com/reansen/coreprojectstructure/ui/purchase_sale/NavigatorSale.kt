@@ -7,7 +7,7 @@ import com.reansen.coreprojectstructure.base.NavigationEvent
 
 class NavigatorSale(private val context: Context) : MainNavigatorImpl() {
 
-    var navigationEvent: NavigationEvent? = null
+    private var navigationEvent: NavigationEvent? = NavigationEvent.UIPurchaseSale()
 
     fun navigate() {
         navigationEvent?.let {

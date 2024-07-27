@@ -16,6 +16,7 @@ reactivex-rxjava3 = "3.1.8"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 activity = "1.9.0"
+rxjava = "3.0.13"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -29,6 +30,7 @@ lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-view
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
 
+rxjava-v3013 = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
 rxjava2 = { module = "io.reactivex.rxjava2:rxjava", version.ref = "reactivex-rxjava2" }
 rxjava3 = { module = "io.reactivex.rxjava3:rxjava", version.ref = "reactivex-rxjava3" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

@@ -32,6 +32,11 @@ dependencies {
 
     implementation(libs.appcompat)
     implementation(libs.material)
+
+    //Todo RxJava
+    implementation(libs.rxjava3)
+    implementation(project(":data-layer"))
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

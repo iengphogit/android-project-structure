@@ -64,6 +64,8 @@ dependencies {
     implementation("io.netty:netty-transport:4.1.75.Final") // Replace with the latest stable version
     implementation("io.netty:netty-codec:4.1.75.Final")
     implementation("io.netty:netty-handler:4.1.75.Final")
+    implementation(project(":domain-layer"))
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
